@@ -23,7 +23,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 2.6, duration: 0.8 }}
-          className="font-mono text-xs uppercase tracking-[0.3em] text-indigo-400"
+          className="font-mono text-xs uppercase tracking-[0.3em] text-zinc-400"
         >
           — Freelance Web Design
         </motion.p>

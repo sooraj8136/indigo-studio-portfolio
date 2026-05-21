@@ -21,7 +21,7 @@ export default function Nav() {
     <header className="fixed inset-x-0 top-0 z-50 border-b hairline bg-black/60 backdrop-blur-xl">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
         <a href="#top" className="text-base font-bold tracking-tight text-white">
-          STUDIO<span className="text-indigo-500">.</span>
+          CODE<span className="text-[color:var(--indigo)]">.</span>WAVE
         </a>
         <nav className="hidden items-center gap-8 md:flex">
           {LINKS.map((l) => (
@@ -34,12 +34,6 @@ export default function Nav() {
             </a>
           ))}
         </nav>
-        <a
-          href="#contact"
-          className="hidden rounded-md border border-indigo-500/60 px-4 py-2 font-mono-label text-white transition-colors hover:bg-indigo-500 md:inline-block"
-        >
-          Start a project
-        </a>
         <button
           aria-label="Open menu"
           onClick={() => setOpen(true)}

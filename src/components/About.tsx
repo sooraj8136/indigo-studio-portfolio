@@ -7,10 +7,9 @@ const STATS = [
 ];
 
 const TEAM = [
-  { name: "Mara Voss", role: "Founder · Design Lead", initials: "MV" },
-  { name: "Eliot Tanaka", role: "Senior UI Designer", initials: "ET" },
-  { name: "Iris Holm", role: "Brand & Identity", initials: "IH" },
-  { name: "Kai Mendez", role: "Engineer · Webflow", initials: "KM" },
+  { name: "Sharath", role: "Web developer", initials: "MV" },
+  { name: "Sujith", role: "Web developer", initials: "ET" },
+  { name: "Sooraj", role: "Web developer", initials: "IH" },
 ];
 
 export default function About() {

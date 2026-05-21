@@ -1,6 +1,7 @@
 import { useState, type FormEvent } from "react";
 import { z } from "zod";
 import { FadeUp, SectionLabel } from "./Section";
+import { ArrowRight } from "lucide-react";
 
 const schema = z.object({
   name: z.string().trim().min(1, "Required").max(100),
@@ -48,10 +49,11 @@ export default function Contact() {
             </a>
             <a
               href="#contact-form"
-              className="group inline-flex items-center gap-2 rounded-md border border-indigo-500 px-5 py-3 font-mono-label text-white transition-colors hover:bg-indigo-500"
+              className="group relative inline-flex items-center gap-2 overflow-hidden border border-[color:var(--indigo)] px-4 py-2.5 font-mono text-[10px] uppercase tracking-[0.15em] text-white"
             >
-              Start a project
-              <span className="transition-transform group-hover:translate-x-1">→</span>
+              <span className="absolute inset-0 -translate-x-full bg-[color:var(--indigo)] transition-transform duration-500 ease-out group-hover:translate-x-0" />
+              <span className="relative z-10">Start a project</span>
+              <ArrowRight className="relative z-10 h-3 w-3 transition-transform duration-300 group-hover:translate-x-1" />
             </a>
           </div>
         </FadeUp>
@@ -88,15 +90,16 @@ export default function Contact() {
               />
             </Field>
             <div className="flex items-center justify-between">
-              <p className="font-mono-label text-zinc-500">
+              {/* <p className="font-mono-label text-zinc-500">
                 {status === "sent" ? "✓ Message sent" : "We'll get back within 24h"}
-              </p>
+              </p> */}
               <button
                 type="submit"
-                className="group inline-flex items-center gap-2 rounded-md border border-indigo-500 px-6 py-3 font-mono-label text-white transition-colors hover:bg-indigo-500"
+                className="group relative inline-flex items-center gap-2 overflow-hidden border border-[color:var(--indigo)] px-4 py-2.5 font-mono text-[10px] uppercase tracking-[0.15em] text-white"
               >
-                Send message
-                <span className="transition-transform group-hover:translate-x-1">→</span>
+                <span className="absolute inset-0 -translate-x-full bg-[color:var(--indigo)] transition-transform duration-500 ease-out group-hover:translate-x-0" />
+                <span className="relative z-10">Send message</span>
+                <ArrowRight className="relative z-10 h-3 w-3 transition-transform duration-300 group-hover:translate-x-1" />
               </button>
             </div>
           </form>
