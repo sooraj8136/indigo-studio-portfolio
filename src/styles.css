@@ -44,6 +44,7 @@
   /* electric indigo #6366f1 */
   --primary: oklch(0.585 0.222 277);
   --primary-foreground: oklch(1 0 0);
+  --indigo: oklch(0.585 0.222 277);
   --secondary: oklch(0.18 0 0);
   --secondary-foreground: oklch(1 0 0);
   --muted: oklch(0.14 0 0);

@@ -1,10 +1,14 @@
-import HeroScene from "./HeroScene";
+import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section id="top" className="relative h-screen min-h-[680px] w-full overflow-hidden">
-      <HeroScene />
-      {/* radial darken to focus center text */}
+    <section
+      id="top"
+      className="relative flex min-h-screen items-center justify-center overflow-hidden px-6"
+    >
+
+      {/* Dark overlay */}
       <div
         className="pointer-events-none absolute inset-0"
         style={{
@@ -12,28 +16,74 @@ export default function Hero() {
             "radial-gradient(ellipse at center, rgba(0,0,0,0) 0%, rgba(0,0,0,0.55) 70%, rgba(0,0,0,0.9) 100%)",
         }}
       />
-      <div className="relative z-10 mx-auto flex h-full max-w-5xl flex-col items-center justify-center px-6 text-center">
-        <span className="font-mono-label text-indigo-400">— Freelance Web Design</span>
-        <h1 className="mt-6 text-4xl font-bold leading-[1.05] tracking-tight text-white sm:text-6xl md:text-7xl">
+
+      {/* Content */}
+      <div className="relative z-10 mx-auto max-w-4xl text-center">
+        <motion.p
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 2.6, duration: 0.8 }}
+          className="font-mono text-xs uppercase tracking-[0.3em] text-indigo-400"
+        >
+          — Freelance Web Design
+        </motion.p>
+
+        <motion.h1
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            delay: 2.8,
+            duration: 1,
+            ease: [0.22, 1, 0.36, 1],
+          }}
+          className="mt-8 text-5xl font-bold leading-[0.95] tracking-tight text-white sm:text-6xl md:text-7xl lg:text-[5.5rem]"
+        >
           We design experiences
           <br />
           <span className="text-zinc-400">people remember.</span>
-        </h1>
-        <p className="mt-6 max-w-xl text-base text-zinc-400 md:text-lg">
-          Premium digital interfaces for modern brands. Studios, startups, and founders who care
-          about the details.
-        </p>
-        <a
-          href="#work"
-          className="group mt-10 inline-flex items-center gap-2 rounded-md border border-indigo-500 px-6 py-3 font-mono-label text-white transition-all hover:bg-indigo-500"
+        </motion.h1>
+
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 3.1, duration: 0.8 }}
+          className="mx-auto mt-8 max-w-lg text-base text-zinc-400 md:text-lg"
         >
-          View our work
-          <span className="transition-transform group-hover:translate-x-1">→</span>
-        </a>
+          Premium digital interfaces for modern brands. Studios, startups, and
+          founders who care about the details.
+        </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 3.3, duration: 0.7 }}
+          className="mt-12 flex items-center justify-center"
+        >
+          <a
+            href="#work"
+            className="group relative inline-flex items-center gap-3 overflow-hidden border border-[color:var(--indigo)] px-7 py-4 font-mono text-xs uppercase tracking-[0.2em] text-white"
+          >
+            {/* Sliding background */}
+            <span className="absolute inset-0 -translate-x-full bg-[color:var(--indigo)] transition-transform duration-500 ease-out group-hover:translate-x-0" />
+
+            {/* Text */}
+            <span className="relative z-10">View our work</span>
+
+            {/* Icon */}
+            <ArrowRight className="relative z-10 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+          </a>
+        </motion.div>
       </div>
-      <div className="absolute bottom-6 left-1/2 z-10 -translate-x-1/2 font-mono-label text-zinc-500">
-        Scroll ↓
-      </div>
+
+      {/* Scroll text */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 3.6, duration: 1 }}
+        className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2 font-mono text-[10px] uppercase tracking-[0.3em] text-zinc-500"
+      >
+        Scroll to explore ↓
+      </motion.div>
     </section>
   );
 }
