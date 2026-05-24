@@ -7,9 +7,9 @@ const STATS = [
 ];
 
 const TEAM = [
-  { name: "Sharath", role: "Web developer", initials: "MV" },
-  { name: "Sujith", role: "Web developer", initials: "ET" },
-  { name: "Sooraj", role: "Web developer", initials: "IH" },
+  { name: "Developer", role: "Web developer", initials: "MV" },
+  { name: "Developer", role: "Web developer", initials: "ET" },
+  { name: "Developer", role: "Web developer", initials: "IH" },
 ];
 
 export default function About() {
@@ -53,7 +53,7 @@ export default function About() {
           </FadeUp>
           <div className="mt-10 grid grid-cols-2 gap-6 md:grid-cols-4">
             {TEAM.map((m, i) => (
-              <FadeUp key={m.name} delay={i * 0.06}>
+              <FadeUp key={`${m.name}-${m.initials}`} delay={i * 0.06}>
                 <div className="group rounded-lg border hairline bg-zinc-950 p-6 transition-colors hover:border-indigo-500/60">
                   <div className="flex h-20 w-20 items-center justify-center rounded-full border hairline bg-black font-mono-label text-lg text-zinc-300 transition-colors group-hover:border-indigo-500/60 group-hover:text-indigo-400">
                     {m.initials}
